@@ -1,1 +1,21 @@
+*.pdf
+*.html
+.vscode/*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Temp
+tmp/*
+cfd_python/ch10/*
+temp_*/*
+*/temp_*/*
+
+# cpp
+a.exe
+
+rf-field/*.h5
+ffield.lut.8
+
 test.out

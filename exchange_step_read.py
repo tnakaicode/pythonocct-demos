@@ -5,7 +5,7 @@ from afem.exchange import StepRead
 from afem.graphics import Viewer
 
 # Read the file
-reader = StepRead('../models/geometry_names.step')
+reader = StepRead('./models/geometry_names.step')
 shape = reader.shape
 
 # Traverse all the faces and find the desired ones based on their name
