@@ -27,7 +27,7 @@ from OCCT.GeomFill import (GeomFill_BSplineCurves,
 from OCCT.GeomAPI import GeomAPI_PointsToBSpline
 from OCCT.Geom import Geom_BSplineCurve
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 
 from OCC.Extend.ShapeFactory import point_list_to_TColgp_Array1OfPnt, make_face
 

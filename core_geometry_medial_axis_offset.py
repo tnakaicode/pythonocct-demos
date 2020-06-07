@@ -20,7 +20,7 @@
 # this example was ported from: http://heekscnc.blogspot.nl/2009/09/occ-offset.html, by Dan Heeks
 
 from OCCT.BRepOffsetAPI import BRepOffsetAPI_MakeOffset
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCCT.GeomAbs import GeomAbs_Arc
 from OCCT.gp import gp_Pnt
 from OCC.Extend.ShapeFactory import make_edge, make_vertex, make_wire, make_face

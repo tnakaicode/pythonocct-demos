@@ -16,7 +16,7 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCCT.Bisector import Bisector_BisecCC
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCCT.GCE2d import GCE2d_MakeLine, GCE2d_MakeCircle
 from OCCT.GccAna import GccAna_Lin2dBisec, GccAna_CircLin2dBisec, GccAna_Pnt2dBisec
 from OCCT.gp import gp_Lin2d, gp_Pnt2d, gp_Dir2d, gp_Circ2d, gp_Ax22d, gp_Pnt

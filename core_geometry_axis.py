@@ -23,7 +23,7 @@ import sys
 
 from OCCT.gp import gp_Pnt, gp_Dir, gp_Ax3
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

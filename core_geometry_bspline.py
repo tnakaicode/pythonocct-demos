@@ -23,7 +23,7 @@ from OCCT.gp import gp_Pnt2d
 from OCCT.Geom2dAPI import Geom2dAPI_Interpolate, Geom2dAPI_PointsToBSpline
 from OCCT.TColgp import TColgp_HArray1OfPnt2d, TColgp_Array1OfPnt2d
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

@@ -20,7 +20,7 @@ from OCCT.BRepPrimAPI import BRepPrimAPI_MakeSphere, BRepPrimAPI_MakeBox
 from OCCT.BRepBuilderAPI import BRepBuilderAPI_GTransform
 from OCCT.BRepAlgoAPI import BRepAlgoAPI_Common
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 
 display, start_display, add_menu, add_function_to_menu = init_display()
 orig = gp_Pnt(0., 0., 0.)

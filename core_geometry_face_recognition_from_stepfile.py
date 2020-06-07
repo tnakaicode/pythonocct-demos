@@ -41,7 +41,7 @@ from OCCT.IFSelect import IFSelect_RetDone, IFSelect_ItemsByEntity
 from OCCT.GeomAbs import GeomAbs_Plane, GeomAbs_Cylinder
 from OCCT.TopoDS import topods_Face
 from OCCT.BRepAdaptor import BRepAdaptor_Surface
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 
 from OCC.Extend.TopologyUtils import TopologyExplorer
 

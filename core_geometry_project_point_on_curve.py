@@ -23,7 +23,7 @@ from OCCT.gp import gp_Pnt, gp_XOY
 from OCCT.GeomAPI import GeomAPI_ProjectPointOnCurve
 from OCCT.Geom import Geom_Circle
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

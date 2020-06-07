@@ -25,7 +25,7 @@ from OCCT.Precision import precision_Angular, precision_Confusion
 from OCCT.GC import GC_MakePlane, GC_MakeEllipse
 from OCCT.Geom import Geom_RectangularTrimmedSurface
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

@@ -19,7 +19,7 @@
 
 from __future__ import print_function
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCCT.gp import gp_QuaternionSLerp, gp_Quaternion, gp_Vec, gp_Pnt
 from OCC.Extend.ShapeFactory import make_edge
 

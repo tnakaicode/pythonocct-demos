@@ -21,7 +21,7 @@ from __future__ import print_function
 
 from OCCT.BRepExtrema import BRepExtrema_DistShapeShape
 from OCCT.BRepPrimAPI import BRepPrimAPI_MakeBox
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCCT.gp import gp_Pnt, gp_Ax2, gp_Circ
 
 from OCC.Extend.ShapeFactory import make_edge, make_vertex

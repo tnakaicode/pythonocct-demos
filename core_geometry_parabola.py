@@ -23,7 +23,7 @@ from OCCT.gp import gp_Pnt2d, gp_Dir2d, gp_Ax22d, gp_Parab2d
 from OCCT.GCE2d import GCE2d_MakeParabola
 from OCCT.Geom2d import Geom2d_TrimmedCurve
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

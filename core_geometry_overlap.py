@@ -24,7 +24,7 @@ from OCCT.gp import gp_Pnt
 from OCCT.BRepPrimAPI import BRepPrimAPI_MakeBox
 from OCCT.BRepMesh import BRepMesh_IncrementalMesh
 from OCCT.BRepExtrema import BRepExtrema_ShapeProximity
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 
 display, start_display, add_menu, add_function_to_menu = init_display()
  

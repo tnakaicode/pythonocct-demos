@@ -29,7 +29,7 @@ from OCCT.Geom2dAPI import Geom2dAPI_PointsToBSpline
 from OCCT.GeomAPI import geomapi
 from OCCT.gp import gp_Pnt, gp_Vec, gp_Pnt2d, gp_Pln, gp_Dir
 from OCCT.TColgp import TColgp_Array1OfPnt2d
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
    
 from OCC.Extend.ShapeFactory import make_wire, make_edge
 

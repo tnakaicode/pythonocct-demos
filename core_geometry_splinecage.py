@@ -28,7 +28,7 @@ from OCCT.GeomAbs import GeomAbs_G1
 from OCCT.BRepOffsetAPI import BRepOffsetAPI_MakeFilling
 from OCCT.TopAbs import TopAbs_FACE, TopAbs_EDGE
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCC.Display.OCCViewer import rgb_color
 from OCC.Extend.TopologyUtils import TopologyExplorer
 from OCC.Extend.DataExchange import read_step_file

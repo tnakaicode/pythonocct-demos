@@ -22,7 +22,7 @@ from OCCT.Geom2d import Geom2d_Circle
 from OCCT.Geom2dAdaptor import Geom2dAdaptor_Curve
 from OCCT.GCPnts import GCPnts_UniformAbscissa
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

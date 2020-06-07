@@ -34,7 +34,7 @@ from OCCT.GeomAbs import (GeomAbs_Plane, GeomAbs_Cylinder,
                               GeomAbs_BSplineSurface)
 from OCCT.BRepAdaptor import BRepAdaptor_Surface
 from OCCT.TopoDS import TopoDS_Face
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCC.Extend.DataExchange import read_step_file
 from OCC.Extend.TopologyUtils import TopologyExplorer
 

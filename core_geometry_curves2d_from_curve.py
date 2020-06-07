@@ -23,7 +23,7 @@ from OCCT.Geom2d import Geom2d_TrimmedCurve
 from OCCT.Geom2dConvert import geom2dconvert_CurveToBSplineCurve
 from OCCT.Convert import Convert_TgtThetaOver2
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 

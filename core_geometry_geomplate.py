@@ -24,7 +24,7 @@ from OCCT.BRep import BRep_Tool
 from OCCT.BRepAdaptor import BRepAdaptor_HCurve
 from OCCT.BRepBuilderAPI import BRepBuilderAPI_MakePolygon
 from OCCT.BRepFill import BRepFill_CurveConstraint
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 from OCCT.GeomAbs import GeomAbs_C0
 from OCCT.GeomLProp import GeomLProp_SLProps
 from OCCT.GeomPlate import (GeomPlate_BuildPlateSurface, GeomPlate_PointConstraint,

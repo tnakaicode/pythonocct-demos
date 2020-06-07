@@ -23,7 +23,7 @@ from OCCT.BRepBndLib import brepbndlib_AddOBB
 from OCCT.BRepBuilderAPI import BRepBuilderAPI_MakeVertex
 from OCCT.Bnd import Bnd_OBB
 
-from OCC.Display.SimpleGui import init_display
+from OCCT.Visualization import BasicViewer
 
 display, start_display, add_menu, add_function_to_menu = init_display()
 
