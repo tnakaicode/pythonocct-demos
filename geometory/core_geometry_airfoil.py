@@ -1,21 +1,21 @@
 # -*- coding:utf-8 -*-
 
-##Copyright 2013-2014 Guillaume Florent (florentsailing@gmail.com)
+# Copyright 2013-2014 Guillaume Florent (florentsailing@gmail.com)
 ##
-##This file is part of pythonOCC.
+# This file is part of pythonOCC.
 ##
-##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU Lesser General Public License as published by
-##the Free Software Foundation, either version 3 of the License, or
-##(at your option) any later version.
+# pythonOCC is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 ##
-##pythonOCC is distributed in the hope that it will be useful,
-##but WITHOUT ANY WARRANTY; without even the implied warranty of
-##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU Lesser General Public License for more details.
+# pythonOCC is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU Lesser General Public License
-##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU Lesser General Public License
+# along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #
 # Explanations for this script can be found at
@@ -26,18 +26,20 @@ import urllib.request as urllib2  # Python3
 from OCCT.BRepBuilderAPI import BRepBuilderAPI_MakeFace
 from OCCT.BRepPrimAPI import BRepPrimAPI_MakePrism
 from OCCT.Geom2dAPI import Geom2dAPI_PointsToBSpline
-from OCCT.GeomAPI import geomapi
+#from OCCT.GeomAPI import geomapi
 from OCCT.gp import gp_Pnt, gp_Vec, gp_Pnt2d, gp_Pln, gp_Dir
 from OCCT.TColgp import TColgp_Array1OfPnt2d
 from OCCT.Visualization import BasicViewer
-   
-from OCC.Extend.ShapeFactory import make_wire, make_edge
+#from OCCT.ShapeExtend import make_w
+
+#from OCC.Extend.ShapeFactory import make_wire, make_edge
 
 
 class UiucAirfoil(object):
     """
     Airfoil with a section from the UIUC database
     """
+
     def __init__(self, chord, span, profile):
         self.chord = chord
         self.span = span
@@ -50,7 +52,8 @@ class UiucAirfoil(object):
         print("Connecting to m-selig, retrieving foil data")
         f = urllib2.urlopen(foil_dat_url)
         print("Building foil geometry")
-        plan = gp_Pln(gp_Pnt(0., 0., 0.), gp_Dir(0., 0., 1.))  # Z=0 plan / XY plan
+        plan = gp_Pln(gp_Pnt(0., 0., 0.), gp_Dir(
+            0., 0., 1.))  # Z=0 plan / XY plan
         section_pts_2d = []
 
         for line in f.readlines()[1:]:  # The first line contains info only
@@ -58,22 +61,24 @@ class UiucAirfoil(object):
             data = line.split()
             # 3 - create an array of points
             if len(data) == 2:  # two coordinates for each point
-                section_pts_2d.append(gp_Pnt2d(float(data[0])*self.chord,
-                                               float(data[1])*self.chord))
+                section_pts_2d.append(gp_Pnt2d(float(data[0]) * self.chord,
+                                               float(data[1]) * self.chord))
 
         # 4 - use the array to create a spline describing the airfoil section
         spline_2d = Geom2dAPI_PointsToBSpline(point2d_list_to_TColgp_Array1OfPnt2d(section_pts_2d),
-                                              len(section_pts_2d)-1,  # order min
+                                              len(section_pts_2d) -
+                                              1,  # order min
                                               len(section_pts_2d))   # order max
         spline = geomapi.To3d(spline_2d.Curve(), plan)
 
         # 5 - figure out if the trailing edge has a thickness or not,
         # and create a Face
         try:
-            #first and last point of spline -> trailing edge
+            # first and last point of spline -> trailing edge
             trailing_edge = make_edge(gp_Pnt(section_pts_2d[0].X(), section_pts_2d[0].Y(), 0.0),
                                       gp_Pnt(section_pts_2d[-1].X(), section_pts_2d[-1].Y(), 0.0))
-            face = BRepBuilderAPI_MakeFace(make_wire([make_edge(spline), trailing_edge]))
+            face = BRepBuilderAPI_MakeFace(
+                make_wire([make_edge(spline), trailing_edge]))
         except AssertionError:
             # the trailing edge segment could not be created, probably because
             # the points are too close
@@ -83,7 +88,7 @@ class UiucAirfoil(object):
         # 6 - extrude the Face to create a Solid
         return BRepPrimAPI_MakePrism(face.Face(),
                                      gp_Vec(gp_Pnt(0., 0., 0.),
-                                     gp_Pnt(0., 0., self.span))).Shape()
+                                            gp_Pnt(0., 0., self.span))).Shape()
 
 
 def point2d_list_to_TColgp_Array1OfPnt2d(li):
@@ -97,10 +102,11 @@ def _Tcol_dim_1(li, _type):
     """
     Function factory for 1-dimensional TCol* types
     """
-    pts = _type(0, len(li)-1)
+    pts = _type(0, len(li) - 1)
     for n, i in enumerate(li):
         pts.SetValue(n, i)
     return pts
+
 
 if __name__ == '__main__':
     airfoil = UiucAirfoil(50., 200., 'b737a')
